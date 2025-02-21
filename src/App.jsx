@@ -14,7 +14,9 @@ import Uiux from "./pages/Uiux";
 
 const App = () => {
   return (
-    <Router>
+    <Router  future={{
+      v7_startTransition: true,
+    }}>
       <div className="App">
       
           <Routes>
