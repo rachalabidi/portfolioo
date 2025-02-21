@@ -1,0 +1,26 @@
+.media-list {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  min-height: 15vh;
+  list-style-type: none;
+  padding: 10;
+}
+
+.media-list li {
+  margin: 0 40px; /* Adjust spacing between icons */
+}
+
+.media-list li a {
+  color: rgba(12, 12, 12, 0.801); /* Change the color of the icons */
+}
+
+@media screen and (max-width: 768px) {
+  .media-list {
+    flex-wrap: wrap;
+  }
+
+  .media-list li {
+    margin: 10px 20px;
+  }
+}

@@ -1,0 +1,110 @@
+.card {
+    width: 100px;
+    height: 450px; /* Full height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    transition: width 0.4s ease; /* Keep the width transition for expansion */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .card-hover {
+    width: 450px; /* Expand horizontally on hover */
+  }
+  
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.411);
+    transition: all 0.4s ease;
+    display: flex;
+    /* align-items: flex-start; */
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    font-size: 20px;
+    height: 450px; 
+    width: 100px;
+    writing-mode: vertical-rl; /* Write text vertically from bottom to top */
+    transform: rotate(180deg); /* Flip the text direction so it goes bottom to top */
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    white-space: nowrap; /* Prevent the text from wrapping */
+  }
+  
+  .card-text {
+    margin-top: 400px;
+    font-size: 16px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+  }
+  
+  .card-hover .card-text {
+    opacity: 1; /* Text becomes visible on hover */
+  }
+  
+
+
+  @media (max-width: 768px) {
+    .card {
+      width: 80px;
+      height: 300px; /* Smaller card height for tablets */
+    }
+  
+    .card-title {
+      font-size: 18px;
+      height: 300px; 
+      width: 80px;
+   
+    }
+    .card-hover {
+      width: 300px; /* Expand less on hover for smaller screens */
+    }
+  
+    .card-title {
+      font-size: 16px; /* Adjust title size */
+    }
+  
+    .card-text {
+      font-size: 14px; /* Adjust text size */
+    }
+  }
+  
+  /* For mobile screens */
+  @media (max-width: 480px) {
+    .card {
+      width: 40px;
+      height: 250px; /* Even smaller height for mobile */
+    }
+  
+    .card-title {
+      font-size: 16px;
+      height: 250px; 
+      width: 40px;
+      
+
+    }
+
+    .card-hover {
+      width: 190px; /* Small hover width for mobile */
+    }
+  
+    .card-title {
+      font-size: 10px; /* Further adjust title size */
+    }
+  
+    .card-text {
+      font-size: 6px; /* Smaller text size for mobile */
+    }
+  }
+
+
+
+  

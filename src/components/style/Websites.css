@@ -1,0 +1,98 @@
+.card-web {
+  max-width: 80%;
+  margin: 0 auto;
+  z-index: 2;
+}
+.cw {
+    width: 300px; /* Fixed width for the card */
+    height: 250px; /* Fixed height for the card */
+   
+   
+  }
+
+
+  
+  @media (max-width: 900px) {
+    
+    
+    .cw {
+      height: 400px;
+      margin: auto;
+      /* Adjust card height */
+    }
+  
+    /* The first "PROJECTS" title at the top */
+    .projects-stack {
+      position: absolute;
+      /* top: 20px; */
+      right: 23%; 
+      display: flex;
+      flex-direction: column;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      /* z-index: 1; 
+       overflow: hidden; */
+    }
+    
+    .project {
+      font-family: var(--default-font-family);
+      margin: 0;
+      position: relative;
+      letter-spacing: 20px; /* Add space between letters */
+  
+    }
+  .u{
+      z-index: 3;
+  }
+    .em{
+      opacity: 0.5;
+      line-height: 100px; /* Adjust the line height for overlap effect */
+      color: transparent;
+      -webkit-text-stroke: 2px white; /* Outlined effect */ 
+      z-index: 1;
+  
+    }
+    
+  }
+
+
+  
+  @media (max-width: 480px) {
+   
+    .projects-stack {
+    
+        right: 6%; 
+        
+        font-size: 30px;
+       
+      }
+      
+      .project {
+    
+        letter-spacing: 15px; /* Add space between letters */
+    
+      }
+      .card-web {
+       
+          max-width: 100%;
+         
+         
+        
+        margin:  auto;
+       
+      }
+    .cw {
+      height: auto;
+      width: 200px;
+     
+    }
+  
+   
+   
+    
+      .projects-repeated span {
+        font-size: 50px;
+      }
+    
+  }

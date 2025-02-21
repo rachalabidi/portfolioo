@@ -1,0 +1,32 @@
+.card {
+    width: 300px; /* Fixed width for the card */
+    height: 400px; /* Fixed height for the card */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for visibility */
+    margin: 20px; /* Add margin between cards */
+  }
+  
+  
+  .card-content {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  

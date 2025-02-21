@@ -1,21 +1,43 @@
 {
-  "name": "coffee_portfolio",
+  "name": "protfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://rachalabidi.github.io/",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@material-tailwind/react": "^2.1.10",
+    "@tabler/icons-react": "^3.24.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/engine": "^3.7.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.7.1",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.13.5",
+    "lucide-react": "^0.445.0",
+    "next": "^15.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-lottie-player": "^2.1.0",
+    "react-router-dom": "^6.26.2",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "typed.js": "^2.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +56,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "gh-pages": "^6.1.1",
+    "tailwindcss": "^3.4.13"
   }
 }

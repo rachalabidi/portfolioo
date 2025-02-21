@@ -1,0 +1,143 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+     margin-top: 6% ;
+    
+  
+  }
+  
+  .blur-container {
+    width: 80vw; /* 80% of the viewport width */
+    height: 80vh; /* 80% of the viewport height */
+    margin: auto; /* Automatically centers the container horizontally */
+    top: 10vh; 
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .left-section {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .right-section {
+    flex: 1;
+    padding: 50px;
+  }
+  
+  .contact-form {
+    max-width: 500px;
+    margin: 5% auto;
+    /* margin-top: 10%; */
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff9c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #047dff7a;
+  }
+  .right-section img {
+    max-width: 100%;
+    margin-top: -10%;
+    padding-right: 80px;
+    
+    
+}
+
+.form-control, textarea {
+    width: 100%;
+    font-family: var(--default-font-family);
+    background-color: #ffffff46;
+    color: rgba(12, 12, 12, 0.801);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 2px;
+    
+    resize: none; /* Disable resizing for textarea */
+}
+
+.left-section h2 {
+  font-family: var(--default-font-family);
+    font-weight: 600px;
+    font-size: 20px;
+    display: inline; /* Ensures the border is as long as the text */
+    position: relative; /* Add position relative */
+
+    margin-right: 55%;
+    color: rgba(255, 255, 255, 0.801);
+   
+}
+
+.left-section h2::after {
+  
+  content: ''; /* Add pseudo-element for the border */
+  position: absolute; /* Position relative to the parent */
+  bottom: 0; /* Align with the bottom of the parent */
+  left: 0; /* Align with the left of the parent */
+  width: 50%; /* Width set to 50% of the parent width */
+  border-bottom: 2px solid rgba(255, 255, 255, 0.801); /* Add bottom border */
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+  .left-section h2 {
+    margin-right: 0; /* Remove margin-right for smaller screens */
+}
+
+  .left-section {
+    margin-top: 30%;
+      padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .contact-form {
+    
+      max-width: 100%; /* Set max-width to 100% for smaller screens */
+  }
+
+  .blur-container {
+      flex-direction: column; /* Change flex-direction to column for smaller screens */
+  }
+
+  .right-section {
+      display: none; /* Hide the right section containing the image */
+  }
+  .form-control, textarea {
+    width: 60%;
+}
+.left-section h2 {
+  
+    font-weight: 400px;
+    font-size: 30px;
+}
+.left-section h2::after {
+    border-bottom: 0px ; /* Add bottom border */
+}
+.blur-container {
+  background-color: rgba(255, 255, 255, 0); /* Adjust the color and opacity for the blur effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+}
+}

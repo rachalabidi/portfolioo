@@ -1,0 +1,42 @@
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 120%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.blur-overlay {
+  position: absolute;
+
+ 
+ 
+  z-index: 2; /* The blur goes over the video but below the content */
+  width: 85vw; /* 80% of the viewport width */
+  height: 85vh; /* 80% of the viewport height */
+ 
+ 
+  background-color: rgba(255, 255, 255, 0.116); 
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   /* Centering the div */
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
