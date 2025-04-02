@@ -59,7 +59,7 @@ class Projects extends Component {
               image={card.image}
               title={card.title}
               content={card.content}
-              isActive={index === (this.state.activeCard !== null ? this.state.activeCard : 0)} // Inline fallback logic
+              isActive={index === (this.state.activeCard ?? 0)}
               onMouseEnter={() => this.setActiveCard(index)} // Optionally set active on hover    
             />
           </a>

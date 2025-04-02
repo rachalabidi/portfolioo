@@ -1,31 +1,46 @@
 import React, { Component } from "react";
 import { Compare } from "./ui/compare";
 
-
 class CompareDemo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isMobile: window.innerWidth < 768,
+    };
+  }
+
+  updateWidth = () => {
+    this.setState({ isMobile: window.innerWidth < 768 });
+  };
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateWidth);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWidth);
+  }
+
   render() {
-    const {
-      firstImage,
-      secondImage,
-      firstImageClassName,
-      secondImageClassname,
-      className,
-      slideMode,
-    } = this.props;
+    const { firstImage, secondImage, firstImageClassName, secondImageClassname, slideMode } = this.props;
+    const { isMobile } = this.state;
 
     return (
-      <Compare
-        firstImage={require('../Data/design/'+`${firstImage}`)}
-        secondImage={require('../Data/design/'+`${secondImage}`)}
-        firstImageClassName={firstImageClassName}
-        secondImageClassname={secondImageClassname}
-        className=""
+      <div
+        className="flex h-screen w-full"
         style={{
-          width: '200px  !important',
-          height: '200px !important',
+          justifyContent: isMobile ? "center" : "flex-start",
+          alignItems: "center",
         }}
-        slideMode={slideMode}
-      />
+      >
+        <Compare
+          firstImage={require("../Data/design/" + `${firstImage}`)}
+          secondImage={require("../Data/design/" + `${secondImage}`)}
+          firstImageClassName={firstImageClassName}
+          secondImageClassname={secondImageClassname}
+          slideMode={slideMode}
+        />
+      </div>
     );
   }
 }

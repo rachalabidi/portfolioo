@@ -39,11 +39,34 @@
     white-space: nowrap; /* Prevent the text from wrapping */
   }
   
+
+
   .card-text {
     margin-top: 400px;
     font-size: 16px;
     opacity: 0; /* Hidden by default */
     transition: opacity 0.4s ease;
+  }
+  
+
+  .card-contento {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+  left: 10px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.411);
+    transition: all 0.4s ease;
+   
+  }
+  
+  .card-titleo {
+    font-size: 14px; /* Adjust as needed */
+    font-weight: bold;
+  }
+  
+  .card-texto{
+    margin-top: 5px;
+    font-size: 10px;
   }
   
   .card-hover .card-text {

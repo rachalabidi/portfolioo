@@ -31,47 +31,47 @@ export const Compare = ({
 }: CompareProps) => {
   const [sliderXPercent, setSliderXPercent] = useState(initialSliderPercentage);
   const [isDragging, setIsDragging] = useState(false);
-
+ 
   const sliderRef = useRef<HTMLDivElement>(null);
-
+ 
   const [isMouseOver, setIsMouseOver] = useState(false);
-
+ 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
-
+ 
   const startAutoplay = useCallback(() => {
     if (!autoplay) return;
-
+ 
     const startTime = Date.now();
     const animate = () => {
       const elapsedTime = Date.now() - startTime;
       const progress =
         (elapsedTime % (autoplayDuration * 2)) / autoplayDuration;
       const percentage = progress <= 1 ? progress * 100 : (2 - progress) * 100;
-
+ 
       setSliderXPercent(percentage);
       autoplayRef.current = setTimeout(animate, 16); // ~60fps
     };
-
+ 
     animate();
   }, [autoplay, autoplayDuration]);
-
+ 
   const stopAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearTimeout(autoplayRef.current);
       autoplayRef.current = null;
     }
   }, []);
-
+ 
   useEffect(() => {
     startAutoplay();
     return () => stopAutoplay();
   }, [startAutoplay, stopAutoplay]);
-
+ 
   function mouseEnterHandler() {
     setIsMouseOver(true);
     stopAutoplay();
   }
-
+ 
   function mouseLeaveHandler() {
     setIsMouseOver(false);
     if (slideMode === "hover") {
@@ -82,7 +82,7 @@ export const Compare = ({
     }
     startAutoplay();
   }
-
+ 
   const handleStart = useCallback(
     (clientX: number) => {
       if (slideMode === "drag") {
@@ -91,13 +91,13 @@ export const Compare = ({
     },
     [slideMode]
   );
-
+ 
   const handleEnd = useCallback(() => {
     if (slideMode === "drag") {
       setIsDragging(false);
     }
   }, [slideMode]);
-
+ 
   const handleMove = useCallback(
     (clientX: number) => {
       if (!sliderRef.current) return;
@@ -112,7 +112,7 @@ export const Compare = ({
     },
     [slideMode, isDragging]
   );
-
+ 
   const handleMouseDown = useCallback(
     (e: React.MouseEvent) => handleStart(e.clientX),
     [handleStart]
@@ -122,7 +122,7 @@ export const Compare = ({
     (e: React.MouseEvent) => handleMove(e.clientX),
     [handleMove]
   );
-
+ 
   const handleTouchStart = useCallback(
     (e: React.TouchEvent) => {
       if (!autoplay) {
@@ -131,13 +131,13 @@ export const Compare = ({
     },
     [handleStart, autoplay]
   );
-
+ 
   const handleTouchEnd = useCallback(() => {
     if (!autoplay) {
       handleEnd();
     }
   }, [handleEnd, autoplay]);
-
+ 
   const handleTouchMove = useCallback(
     (e: React.TouchEvent) => {
       if (!autoplay) {
@@ -146,11 +146,16 @@ export const Compare = ({
     },
     [handleMove, autoplay]
   );
-
+ 
   return (
     <div
       ref={sliderRef}
-      className={cn("w-[400px] h-[400px] overflow-hidden", className)}
+      className={cn(
+        "w-[250px] h-[250px] overflow-hidden ",  // Default for larger screens
+                // Medium screens
+        "sm:w-[400px] sm:h-[400px]  "             // Small screens (mobile)
+      )}
+      
       style={{
         position: "relative",
         cursor: slideMode === "drag" ? "grab" : "col-resize",
@@ -198,7 +203,7 @@ export const Compare = ({
           {firstImage ? (
             <motion.div
               className={cn(
-                "absolute inset-0 z-20 rounded-2xl flex-shrink-0 w-full h-full select-none overflow-hidden",
+                "absolute inset-0 z-20 rounded-2xl shrink-0 w-full h-full select-none overflow-hidden",
                 firstImageClassName
               )}
               style={{
@@ -210,7 +215,7 @@ export const Compare = ({
                 alt="first image"
                 src={firstImage}
                 className={cn(
-                  "absolute inset-0  z-20 rounded-2xl flex-shrink-0 w-full h-full select-none",
+                  "absolute inset-0  z-20 rounded-2xl shrink-0 w-full h-full select-none",
                   firstImageClassName
                 )}
                 draggable={false}
@@ -219,7 +224,7 @@ export const Compare = ({
           ) : null}
         </AnimatePresence>
       </div>
-
+ 
       <AnimatePresence initial={false}>
         {secondImage ? (
           <motion.img
@@ -236,5 +241,5 @@ export const Compare = ({
     </div>
   );
 };
-
+ 
 const MemoizedSparklesCore = React.memo(SparklesCore);

@@ -4,6 +4,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 
+/* Change Swiper navigation arrows to white */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white !important; /* Makes the arrows white */
+}
+
+/* If arrows are images (default), change to white */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: white !important;
+  font-size: 25px; /* Adjust size if needed */
+}
+
+
+/* Change Swiper pagination dots to white */
+.swiper-pagination-bullet {
+  background-color: white !important;
+}
+
+/* Highlight active dot in white */
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+
+
+.carousel-wrapper {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-link {
+  text-decoration: none;
+}
 
 .card-container { 
  

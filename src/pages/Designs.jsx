@@ -14,6 +14,7 @@ class Websites extends Component {
  
   render() {
     const compareItems = [
+   
       {
         firstImage: "carteVisit.png",
         secondImage: "carteVisit2.png", //2000*2000

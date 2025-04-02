@@ -10,6 +10,8 @@ import { ShootingStarsAndStarsBackgroundDemo } from "./components/ShootingStarsA
 import Websites from "./pages/Websites";
 import Designs from "./pages/Designs";
 import Uiux from "./pages/Uiux";
+import ProjectsWrapper from "./pages/ProjectsWrapper";
+// import ResPrjt from "./pages/RespPrjt";
 
 
 const App = () => {
@@ -23,7 +25,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/projects" element={<ProjectRespo />} />
+            <Route path="/projects" element={<ProjectsWrapper />} />
+            {/* <Route path="/resPrjt" element={<ResPrjt/>} /> */}
             <Route path="/websites" element={<Websites />} />
             <Route path="/ui-ux" element={<Uiux />} />
             <Route path="/graphic-design" element={<Designs />} />
